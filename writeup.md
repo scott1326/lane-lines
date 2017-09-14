@@ -8,7 +8,7 @@ The pipeline consisted of several steps:
 * Run a Canny Edge detection on the image
 * Mask the image using the Region of Interest function -
 *Here I used a 4-sided polygon with arbitrarily chosen vertices, two on the bottom edge and two 40% from the top of the image*
-* Run the Hough transform on the image - *This is where the bulk of the work was performed (actually in the draw_lines function called by the Hough transform function).  After getting lines from the Hough function, I checked for lines with a particular slope range (again chosen arbitrarily). The points of the lines get sorted into left side and right side.  I then used polyfit to find the best line for each side.  Using the resulting equation, I calculated a closest fit to the lane line using the y-coords of the bottom edge and the top of the region of interest chosen earlier.  These lines get drawn on a blank image and returned. *
+* Run the Hough transform on the image - *This is where the bulk of the work was performed (actually in the draw_lines function called by the Hough transform function).  After getting lines from the Hough function, I checked for lines with a particular slope range (again chosen arbitrarily). The points of the lines get sorted into left side and right side.  I then used polyfit to find the best line for each side.  Using the resulting equation, I calculated a closest fit to the lane line using the y-coords of the bottom edge and the top of the region of interest chosen earlier.  These lines get drawn on a blank image and returned.*
 * Take the resulting image and combine it to the original with weighted_img - *The Hough image is combined with the original to produce the desired lane lines*
 
 ## Shortcomings
